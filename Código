@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	int modulo, negativo;
+	float x, y, resultado;
+	printf("\t\t\t\t\t\tCalculadora em C");
+	printf("\n\t\t\t\tAceita números até 4 casas depois da virgula\n");
+	
+	printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
+	scanf("%i", &modulo);
+	
+	if(modulo == 1){
+	printf("\n\t\t\t\t\t\tSoma");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x + y;
+	printf("\n\t\t\t%.4f + %.4f = %.6f", x, y, resultado);
+   
+   }else{
+   	
+	   if(modulo == 2){
+	   		printf("\n\t\t\t\t\t\tSubtração");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	if(x < y){
+		printf("\nSeu número será negativo tem certeza?\n1 = sim/2 = não\ndigite aqui: ");
+		scanf("%i", &negativo);
+		
+	if(negativo == 1){
+		resultado = x - y;
+		printf("\n\t\t\t%.4f - %.4f = %.6f", x, y, resultado);
+	}else{
+		resultado = y - x;
+			printf("\n\t\t\t\tnúmeros invertidos");
+		printf("\n\t\t\t\t%.4f - %.4f = %.6f", y, x, resultado);
+	}
+	   }else{
+	   		resultado = x - y;
+		printf("\n\t\t\t%.4f - %.4f = %.6f", x, y, resultado);
+	   }
+	   
+   }else{
+   	
+   	if(modulo == 3){
+   			printf("\n\t\t\t\t\t\tDivisão");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	if(x < y){
+			if(x < y){
+		printf("\nSeu número será negativo tem certeza?\n1 = sim/2 = não\ndigite aqui: ");
+		scanf("%i", &negativo);
+		
+	if(negativo == 1){
+		resultado = x / y;
+		printf("\n\t\t\t\t%.4f/%.4f = %.6f", x, y, resultado);
+		}else{
+			resultado = y / x;
+				printf("\n\t\t\t\tnúmeros invertidos");
+				printf("\n\t\t\t\t%.4f/%.4f = %.6f", y, x, resultado);
+		}
+   	}
+   }
+   
+ }else{
+ 	
+ 	if(modulo == 4){
+ 		printf("\n\t\t\t\t\t\tMultiplicação");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x * y;
+	printf("\n\t\t\t\t%.4f * %.4f = %.6f", x, y, resultado);
+ 
+ 	}else{
+ 		
+ 		printf("Me desculpe você digitou outro número além dos referidos.\npor favor aperte qualquer tecla e tente novamente");
+ 	}
+ }
+	
+}
+}
+}
