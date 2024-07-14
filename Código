@@ -5,8 +5,14 @@ int main(){
 	setlocale(LC_ALL,"portuguese");
 	int modulo, negativo;
 	float x, y, resultado;
+	int d = 0;
+	
+	do {
+	
+	
 	printf("\t\t\t\t\t\tCalculadora em C");
 	printf("\n\t\t\t\tAceita números até 4 casas depois da virgula\n");
+	
 	
 	printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
 	scanf("%i", &modulo);
@@ -32,7 +38,7 @@ int main(){
 	printf("Digite o segundo número: ");
 	scanf("%f", &y);
 	if(x < y){
-		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = não)\ndigite aqui: ");
+		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = inverter números)\ndigite aqui: ");
 		scanf("%i", &negativo);
 		
 	if(negativo == 1){
@@ -60,7 +66,7 @@ int main(){
 	scanf("%f", &y);
 	if(x < y){
 			if(x < y){
-		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = não)\ndigite aqui: ");
+		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = iverter números)\ndigite aqui: ");
 		scanf("%i", &negativo);
 		
 	if(negativo == 1){
@@ -72,6 +78,9 @@ int main(){
 				printf("\n\t\t\t\t%.4f/%.4f = %.6f", y, x, resultado);
 		}
    	 }
+   }else{
+   	resultado = x / y;
+   		printf("\n\t\t\t\t%.4f/%.4f = %.6f", x, y, resultado);
    }
    //Fim divisão
    
@@ -98,4 +107,8 @@ int main(){
 	
 }
 }
+printf("\n\n");
+d++;
+}while(d < 10);
+printf("Você ja ultilizou demais a calculadora.\nVocê deve autualizar a calculadora e reabrir\nAperte qualquer tecla");
 }
