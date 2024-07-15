@@ -1,0 +1,377 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	int modulo, negativo, numeros, calculadora, i;
+	float x, y, z, a, resultado;
+	int d = 0;
+	
+	printf("Você deseja ultilizar calculadora simples ou avançada?\n(1 = simples/2 = avançada)\nDigite aqui: ");
+	scanf("%i", &calculadora);
+	
+	switch(calculadora){
+		
+		case 1: //calculadora simples
+		
+		do {
+	
+	
+	printf("\t\t\t\t\t\tCalculadora em C");
+	printf("\n\t\t\t\tAceita números até 4 casas depois da virgula\n");
+	
+	
+	printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
+	scanf("%i", &modulo);
+	
+	//Adição
+	if(modulo == 1){
+	printf("\n\t\t\t\t\t\tSoma");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x + y;
+	printf("\n\t\t\t%.4f + %.4f = %.6f", x, y, resultado);
+   // Fim adição
+   
+   }else{
+   	
+   	   //Subtração
+	   if(modulo == 2){
+	   		printf("\n\t\t\t\t\t\tSubtração");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	if(x < y){
+		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = inverter números)\ndigite aqui: ");
+		scanf("%i", &negativo);
+		
+	if(negativo == 1){
+		resultado = x - y;
+		printf("\n\t\t\t%.4f - %.4f = %.6f", x, y, resultado);
+	}else{
+		resultado = y - x;
+			printf("\n\t\t\t\tnúmeros invertidos");
+		printf("\n\t\t\t\t%.4f - %.4f = %.6f", y, x, resultado);
+	}
+	   }else{
+	   		resultado = x - y;
+		printf("\n\t\t\t%.4f - %.4f = %.6f", x, y, resultado);
+	   }
+	   //Fim subtração
+	   
+   }else{
+   	
+   	//Divisão
+   	if(modulo == 3){
+   			printf("\n\t\t\t\t\t\tDivisão");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	if(x < y){
+			if(x < y){
+		printf("\nSeu número será negativo tem certeza?\n(1 = sim/2 = iverter números)\ndigite aqui: ");
+		scanf("%i", &negativo);
+		
+	if(negativo == 1){
+		resultado = x / y;
+		printf("\n\t\t\t\t%.4f/%.4f = %.6f", x, y, resultado);
+		}else{
+			resultado = y / x;
+				printf("\n\t\t\t\tnúmeros invertidos");
+				printf("\n\t\t\t\t%.4f/%.4f = %.6f", y, x, resultado);
+		}
+   	 }
+   }else{
+   	resultado = x / y;
+   		printf("\n\t\t\t\t%.4f/%.4f = %.6f", x, y, resultado);
+   }
+   //Fim divisão
+   
+ }else{
+ 	
+ 	//Multiplicação
+ 	if(modulo == 4){
+ 		printf("\n\t\t\t\t\t\tMultiplicação");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x * y;
+	printf("\n\t\t\t\t%.4f * %.4f = %.6f", x, y, resultado);
+	//Fim multiplicação
+ 
+ 	}
+	 //else para caso não digite 1, 2, 3 ou 4 para dizer o modulo
+	 else{
+ 		
+ 		printf("Me desculpe você digitou outro número além dos referidos.\npor favor aperte qualquer tecla e tente novamente");
+ 	}
+ }
+
+}
+}
+printf("\n\n");
+d++;
+}while(d < 10);
+printf("Você ja ultilizou demais a calculadora.\nVocê deve reabri-la\nPressione qualquer tecla\n\n\n\n\n\n\n\n");
+		
+		break;
+	
+	case 2: //calculadora avançada
+	
+	do {
+	
+	
+	printf("\t\t\t\t\t\tCalculadora em C\n\t\t\t\t\tSem auxilio de número negativo");
+	printf("\n\t\t\t\tAceita números até 4 casas depois da virgula\n");
+	
+	printf("\ndigite a quantidade de números que deseja calcular. \nobs:(Minimo = 2/Maximo = 4)\nDigite aqui: ");
+	scanf("%i", &numeros);
+	
+	switch(numeros){
+		
+		case 2: //2 digitos
+	
+	printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
+	scanf("%i", &modulo);
+	
+	//Adição
+	if(modulo == 1){
+	printf("\n\t\t\t\t\t\tSoma");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x + y;
+	printf("\n\t\t\t%.4f + %.4f = %.6f", x, y, resultado);
+   // Fim adição
+   
+   }else{
+   	
+   	   //Subtração
+	   if(modulo == 2){
+	   		printf("\n\t\t\t\t\t\tSubtração");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	   		resultado = x - y;
+		printf("\n\t\t\t%.4f - %.4f = %.6f", x, y, resultado);
+	   //Fim subtração
+	   
+   }else{
+   	
+   	//Divisão
+   	if(modulo == 3){
+   			printf("\n\t\t\t\t\t\tDivisão");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+   	resultado = x / y;
+   		printf("\n\t\t\t\t%.4f/%.4f = %.6f", x, y, resultado);
+   
+   //Fim divisão
+   
+ }else{
+ 	
+ 	//Multiplicação
+ 	if(modulo == 4){
+ 		printf("\n\t\t\t\t\t\tMultiplicação");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	resultado = x * y;
+	printf("\n\t\t\t\t%.4f * %.4f = %.6f", x, y, resultado);
+	//Fim multiplicação
+ 
+ 	}
+	 //else para caso não digite 1, 2, 3 ou 4 para dizer o modulo
+	 else{
+ 		
+ 		printf("Me desculpe você digitou outro número além dos referidos.\npor favor aperte qualquer tecla e tente novamente");
+ 	}
+ }
+}
+}
+
+     break;
+
+case 3: //3 digitos
+
+	printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
+	scanf("%i", &modulo);
+	
+	//Adição
+	if(modulo == 1){
+	printf("\n\t\t\t\t\t\tSoma");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+		printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	resultado = x + y + z;
+	printf("\n\t\t\t%.4f + %.4f + %.4f = %.6f", x, y, z, resultado);
+   // Fim adição
+   
+   }else{
+   	
+   	   //Subtração
+	   if(modulo == 2){
+	   		printf("\n\t\t\t\t\t\tSubtração");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	   		resultado = x - y - z;
+		printf("\n\t\t\t%.4f - %.4f - %.4f = %.6f", x, y, z, resultado);
+	   //Fim subtração
+	   
+   }else{
+   	
+   	//Divisão
+   	if(modulo == 3){
+   			printf("\n\t\t\t\t\t\tDivisão");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+   	resultado = x / y / z;
+   		printf("\n\t\t\t\t%.4f/%.4f/%.4f = %.6f", x, y, z, resultado);
+   //Fim divisão
+   
+ }else{
+ 	
+ 	//Multiplicação
+ 	if(modulo == 4){
+ 		printf("\n\t\t\t\t\t\tMultiplicação");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	resultado = x * y * z;
+	printf("\n\t\t\t\t%.4f * %.4f * %.4f = %.6f", x, y, z, resultado);
+	//Fim multiplicação
+ 
+ 	}
+	 //else para caso não digite 1, 2, 3 ou 4 para dizer o modulo
+	 else{
+ 		
+ 		printf("Me desculpe você digitou outro número além dos referidos.\npor favor aperte qualquer tecla e tente novamente");
+ 	}
+ }
+	
+}
+} break;
+
+case 4: //4 digitos
+	
+		printf("\ndigite 1 para soma\ndigite 2 para subtração \ndigite 3 para divisão\ndigite 4 para multiplicação\nDigite aqui: ");
+	scanf("%i", &modulo);
+	
+	//Adição
+	if(modulo == 1){
+	printf("\n\t\t\t\t\t\tSoma");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+		printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	printf("Digite o quarto número: ");
+	scanf("%f", &a);
+	resultado = x + y + z + a;
+	printf("\n\t\t\t%.4f + %.4f + %.4f + %.4f = %.6f", x, y, z, a, resultado);
+   // Fim adição
+   
+   }else{
+   	
+   	   //Subtração
+	   if(modulo == 2){
+	   		printf("\n\t\t\t\t\t\tSubtração");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	printf("Digite o quarto número: ");
+	scanf("%f", &a);
+	   		resultado = x - y - z - a;
+		printf("\n\t\t\t%.4f - %.4f - %.4f - %.4f = %.6f", x, y, z, a, resultado);
+	   //Fim subtração
+	   
+   }else{
+   	
+   	//Divisão
+   	if(modulo == 3){
+   			printf("\n\t\t\t\t\t\tDivisão");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	printf("Digite o quarto número: ");
+	scanf("%f", &a);
+   	resultado = x / y / z / a;
+   		printf("\n\t\t\t\t%.4f/%.4f/%.4f/%.4f = %.6f", x, y, z, a, resultado);
+   //Fim divisão
+   
+ }else{
+ 	
+ 	//Multiplicação
+ 	if(modulo == 4){
+ 		printf("\n\t\t\t\t\t\tMultiplicação");
+	printf("\nDigite o primeiro número: ");
+	scanf("%f", &x);
+	printf("Digite o segundo número: ");
+	scanf("%f", &y);
+	printf("Digite o terceiro número: ");
+	scanf("%f", &z);
+	printf("Digite o quarto número: ");
+	scanf("%f", &a);
+	resultado = x * y * z * a;
+	printf("\n\t\t\t\t%.4f * %.4f * %.4f * %.4f = %.6f", x, y, z, a, resultado);
+	//Fim multiplicação
+ 
+ 	}
+	 //else para caso não digite 1, 2, 3 ou 4 para dizer o modulo
+	 else{
+ 		
+ 		printf("Me desculpe você digitou outro número além dos referidos.\npor favor aperte qualquer tecla e tente novamente");
+ 	}
+ }
+	
+}
+}
+	
+	break;
+	default:
+		printf("\nEsse número não está disponivel nesta versão da calculadora\ntente novamente");
+		break;
+}
+printf("\n\n");
+d++;
+}while(d < 20);
+printf("Você ja ultilizou demais a calculadora.\nVocê deve reabri-la\nPressione qualquer tecla\n\n\n\n\n\n\n\n");
+break;
+default:
+	printf("\t\t\t\t\t\nInvalido\n");
+	for(i=1; i < 100000; i++){
+		printf("%i", &i);
+	}break;
+}
+}
